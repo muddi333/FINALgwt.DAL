@@ -1,6 +1,8 @@
 package dto;
 
-public class ReceptKompDTO
+import java.io.Serializable;
+
+public class ReceptKompDTO implements Serializable
 {
 	int receptId;                  // auto genereres fra 1..n   
 	int raavareId;             // i omraadet 1-99999999

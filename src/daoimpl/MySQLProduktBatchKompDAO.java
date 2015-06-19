@@ -1,5 +1,6 @@
 package daoimpl;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import dto.ProduktBatchKompDTO;
 
 
 
-public class MySQLProduktBatchKompDAO implements IProduktBatchKompDAO {
+public class MySQLProduktBatchKompDAO implements IProduktBatchKompDAO, Serializable {
 
 	@Override
 	public ProduktBatchKompDTO getProduktBatchKomp(int pbId, int rbId)

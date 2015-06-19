@@ -1,7 +1,8 @@
 package Connect;
+import java.io.Serializable;
 import java.sql.*;
 
-public class ExampleSimpleAccess {
+public class ExampleSimpleAccess implements Serializable {
 
 	public static void main(String[] args) { 
 

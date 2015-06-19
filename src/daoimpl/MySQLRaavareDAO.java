@@ -1,5 +1,6 @@
 package daoimpl;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import dto.RaavareDTO;
 
 
 
-public class MySQLRaavareDAO  implements IRaavareDAO{
+public class MySQLRaavareDAO  implements IRaavareDAO, Serializable {
 
 	@Override
 	public RaavareDTO getRaavare(int raavareId) throws DALException {

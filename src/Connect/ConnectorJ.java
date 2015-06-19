@@ -1,4 +1,5 @@
 package Connect;
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,7 +8,7 @@ import java.sql.Statement;
 
 import daoInterfaces.DALException;
 
-	public class ConnectorJ
+	public class ConnectorJ implements Serializable
 	{
 		/**
 		 * To connect to a MySQL-server

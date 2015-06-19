@@ -1,5 +1,6 @@
 package daoimpl;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import daoInterfaces.IReceptKompDAO;
 import dto.ReceptKompDTO;
 
 
-public class MySQLReceptKompDAO implements IReceptKompDAO{
+public class MySQLReceptKompDAO implements IReceptKompDAO, Serializable {
 
 	@Override
 	public ReceptKompDTO getReceptKomp(int receptId, int raavareId) throws DALException {

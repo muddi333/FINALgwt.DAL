@@ -6,6 +6,15 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   <!-- Servlets -->
+  <servlet>
+    <servlet-name>FunctionalityServlet</servlet-name>
+    <servlet-class>edu.example.server.FunctionalityServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>FunctionalityServlet</servlet-name>
+    <url-pattern>/gwtprojecttwo/exampleservice</url-pattern>
+  </servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>

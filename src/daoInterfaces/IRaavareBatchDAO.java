@@ -1,10 +1,11 @@
 package daoInterfaces;
 
+import java.io.Serializable;
 import java.util.List;
 
 import dto.RaavareBatchDTO;
 
-public interface IRaavareBatchDAO {
+public interface IRaavareBatchDAO extends Serializable {
 	RaavareBatchDTO getRaavareBatch(int rbId) throws DALException;
 	List<RaavareBatchDTO> getRaavareBatchList() throws DALException;
 	List<RaavareBatchDTO> getRaavareBatchList(int raavareId) throws DALException;

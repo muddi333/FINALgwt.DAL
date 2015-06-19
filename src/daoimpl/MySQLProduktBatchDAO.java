@@ -1,5 +1,6 @@
 package daoimpl;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import daoInterfaces.IProduktBatchDAO;
 import dto.ProduktBatchDTO;
 
 
-public class MySQLProduktBatchDAO implements IProduktBatchDAO {
+public class MySQLProduktBatchDAO implements IProduktBatchDAO, Serializable {
 
 	@Override
 	public ProduktBatchDTO getProduktBatch(int pbId) throws DALException {

@@ -1,5 +1,7 @@
 package dto;
 
+import java.io.Serializable;
+
 /**
  * Operatoer Data Access Objekt
  * 
@@ -7,7 +9,7 @@ package dto;
  * @version 1.2
  */
 
-public class OperatoerDTO
+public class OperatoerDTO implements Serializable
 {
 	/** Operatoer-identifikationsnummer (opr_id) i omraadet 1-99999999. Vaelges af brugerne */
 	int oprId;  

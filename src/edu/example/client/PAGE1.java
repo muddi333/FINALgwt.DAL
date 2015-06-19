@@ -11,13 +11,14 @@ public class PAGE1 extends Composite {
 	private MainView main;
 
 
-	public PAGE1(MainView main){
+	public PAGE1(MainView main, int clearance){
 		this.main = main;
 		initWidget(this.hPanel);
 
 		hPanel.setSpacing(10);
 
-		Button bt1 = new Button("Opret");
+		switch(clearance) {
+		case 0: Button bt1 = new Button("Opret");
 		bt1.addClickHandler(new ls1Clickhandler());
 		this.hPanel.add(bt1);
 
@@ -31,6 +32,7 @@ public class PAGE1 extends Composite {
 
 		Button bt4= new Button("Vis");
 		this.hPanel.add(bt4);
+		}
 	}
 
 	private class ls1Clickhandler implements ClickHandler{

@@ -1,6 +1,8 @@
 package Connect;
 
-public abstract class ConstantJ
+import java.io.Serializable;
+
+public abstract class ConstantJ implements Serializable
 {
 	public static final String
 	server					= "62.79.16.16",  // database-serveren

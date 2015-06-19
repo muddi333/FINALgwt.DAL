@@ -1,6 +1,8 @@
 package dto;
 
-public class RaavareBatchDTO
+import java.io.Serializable;
+
+public class RaavareBatchDTO implements Serializable
 {
 	int rbId;                     // i omraadet 1-99999999
 	int raavareId;             // i omraadet 1-99999999

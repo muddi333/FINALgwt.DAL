@@ -1,5 +1,6 @@
 package daoimpl;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import dto.RaavareBatchDTO;
 
 
 
-public class MySQLRaavareBatchDAO implements IRaavareBatchDAO{
+public class MySQLRaavareBatchDAO implements IRaavareBatchDAO, Serializable {
 
 	@Override
 	public RaavareBatchDTO getRaavareBatch(int rbId) throws DALException {

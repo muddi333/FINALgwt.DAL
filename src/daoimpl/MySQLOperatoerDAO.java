@@ -1,5 +1,6 @@
 package daoimpl;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import dto.OperatoerDTO;
 
 
 
-public class MySQLOperatoerDAO implements IOperatoerDAO {
+public class MySQLOperatoerDAO implements IOperatoerDAO, Serializable {
 	public OperatoerDTO getOperatoer(int oprId) throws DALException {
 		ResultSet rs = ConnectorJ.doQuery("SELECT * FROM operatoer WHERE opr_id = " + oprId);
 		try {
@@ -55,6 +56,15 @@ public class MySQLOperatoerDAO implements IOperatoerDAO {
 		}
 		catch (SQLException e) { throw new DALException(e); }
 		return list;
+	}
+	
+	public int getRolle(int oprId) throws DALException {
+		ResultSet rs = ConnectorJ.doQuery("SELECT * FROM operatoer WHERE opr_id = " + oprId);
+		try {
+			return rs.getInt("rolle");
+		} catch (SQLException e) {
+			throw new DALException(e);
+		}
 	}
 	
 	public boolean ifExist(int id) throws DALException{
