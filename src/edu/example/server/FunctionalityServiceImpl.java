@@ -3,32 +3,33 @@ package edu.example.server;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-import Connect.ConnectorJ;
-import daoInterfaces.DALException;
-import daoInterfaces.IProduktBatchDAO;
-import daoInterfaces.IProduktBatchKompDAO;
-import daoInterfaces.IRaavareBatchDAO;
-import daoInterfaces.IRaavareDAO;
-import daoInterfaces.IReceptDAO;
-import daoInterfaces.IReceptKompDAO;
-import daoInterfaces.IOperatoerDAO;
-import daoimpl.MySQLOperatoerDAO;
-import daoimpl.MySQLProduktBatchDAO;
-import daoimpl.MySQLProduktBatchKompDAO;
-import daoimpl.MySQLRaavareBatchDAO;
-import daoimpl.MySQLRaavareDAO;
-import daoimpl.MySQLReceptDAO;
-import daoimpl.MySQLReceptKompDAO;
-import dto.OperatoerDTO;
-import dto.ProduktBatchDTO;
-import dto.ProduktBatchKompDTO;
-import dto.RaavareBatchDTO;
-import dto.RaavareDTO;
-import dto.ReceptDTO;
-import dto.ReceptKompDTO;
 import edu.example.client.service.FunctionalityService;
+import edu.example.server.connector.ConnectorJ;
+import edu.example.server.daoImpl.MySQLOperatoerDAO;
+import edu.example.server.daoImpl.MySQLProduktBatchDAO;
+import edu.example.server.daoImpl.MySQLProduktBatchKompDAO;
+import edu.example.server.daoImpl.MySQLRaavareBatchDAO;
+import edu.example.server.daoImpl.MySQLRaavareDAO;
+import edu.example.server.daoImpl.MySQLReceptDAO;
+import edu.example.server.daoImpl.MySQLReceptKompDAO;
+import edu.example.server.daoInterface.IOperatoerDAO;
+import edu.example.server.daoInterface.IProduktBatchDAO;
+import edu.example.server.daoInterface.IProduktBatchKompDAO;
+import edu.example.server.daoInterface.IRaavareBatchDAO;
+import edu.example.server.daoInterface.IRaavareDAO;
+import edu.example.server.daoInterface.IReceptDAO;
+import edu.example.server.daoInterface.IReceptKompDAO;
+import edu.example.shared.dto.DALException;
+import edu.example.shared.dto.OperatoerDTO;
+import edu.example.shared.dto.ProduktBatchDTO;
+import edu.example.shared.dto.ProduktBatchKompDTO;
+import edu.example.shared.dto.RaavareBatchDTO;
+import edu.example.shared.dto.RaavareDTO;
+import edu.example.shared.dto.ReceptDTO;
+import edu.example.shared.dto.ReceptKompDTO;
 
 public class FunctionalityServiceImpl extends RemoteServiceServlet implements FunctionalityService {
 	private IPasswordGen pswgen;
@@ -114,14 +115,9 @@ public class FunctionalityServiceImpl extends RemoteServiceServlet implements Fu
 
 	@Override
 	public boolean login(int oprId, String psw) throws DALException {
-		return psw.equals(opData.getOperatoer(oprId).getPassword()) && (oprId > 9);
+		return psw.equals(opData.getOperatoer(oprId).getPassword());
 	}
 	
-	@Override
-	public int getOprClearance(int oprId) throws DALException {
-		return opData.getRolle(oprId);
-	}
-
 	public boolean checkRaavareId(int id) throws DALException {
 		return rbData.ifExist(id);
 	}

@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
-import daoInterfaces.DALException;
-import dto.OperatoerDTO;
-import dto.ProduktBatchDTO;
-import dto.ProduktBatchKompDTO;
-import dto.RaavareBatchDTO;
-import dto.RaavareDTO;
-import dto.ReceptDTO;
-import dto.ReceptKompDTO;
+import edu.example.shared.dto.DALException;
+import edu.example.shared.dto.OperatoerDTO;
+import edu.example.shared.dto.ProduktBatchDTO;
+import edu.example.shared.dto.ProduktBatchKompDTO;
+import edu.example.shared.dto.RaavareBatchDTO;
+import edu.example.shared.dto.RaavareDTO;
+import edu.example.shared.dto.ReceptDTO;
+import edu.example.shared.dto.ReceptKompDTO;
 
 @RemoteServiceRelativePath("exampleservice")
 public interface FunctionalityService extends RemoteService{
@@ -27,7 +27,6 @@ public interface FunctionalityService extends RemoteService{
 	public void deleteOperatoer(OperatoerDTO op) throws DALException;
 	public boolean checkOprId(int oprId) throws DALException;
 	public boolean checkPasswordIntegrity(String psw);
-	public int getOprClearance(int oprId) throws DALException;
 	public boolean login(int oprId, String psw) throws DALException;
 	public boolean checkReceptId(int receptId) throws DALException;
 	public boolean checkRaavareId(int rvId) throws DALException;
